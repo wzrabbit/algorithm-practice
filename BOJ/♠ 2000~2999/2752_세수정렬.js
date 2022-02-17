@@ -1,0 +1,1 @@
+console.log(require('fs').readFileSync('/dev/stdin').toString().trim().split(' ').map((x) => parseInt(x)).sort((a, b) => a- b).join(' '));
