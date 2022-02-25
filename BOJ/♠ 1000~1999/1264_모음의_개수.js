@@ -3,7 +3,7 @@ let result = '';
 input.pop()
 
 for (let i = 0; i < input.length; i++) {
-  result += (input[i].match(/[aeiou]/gi) || []).length + '\n';
+    result += (input[i].match(/[aeiou]/gi) || []).length + '\n';
 }
 
 console.log(result);

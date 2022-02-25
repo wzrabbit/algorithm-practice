@@ -17,5 +17,5 @@ if (alphabets.join(",").match(regex).length >= 2) {
     console.log("?");
 }
 else {
-    console.log (String.fromCharCode(max[0] + 65));
+    console.log(String.fromCharCode(max[0] + 65));
 }

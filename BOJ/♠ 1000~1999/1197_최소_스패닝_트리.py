@@ -1,11 +1,13 @@
 import sys
 input = sys.stdin.readline
 
+
 def find(a):
     if union[a] == 0:
         return a
     union[a] = find(union[a])
     return union[a]
+
 
 def merge(a, b):
     a = find(a)
@@ -20,6 +22,7 @@ def merge(a, b):
         rank[b] += rank[a]
     return True
 
+
 v, e = list(map(int, input().split()))
 line = []
 union = [0 for i in range(v + 1)]
@@ -27,7 +30,7 @@ rank = [1 for i in range(v + 1)]
 
 for i in range(e):
     line.append(list(map(int, input().split())))
-line.sort(key = lambda x: x[2])
+line.sort(key=lambda x: x[2])
 
 count = 0
 weight = 0

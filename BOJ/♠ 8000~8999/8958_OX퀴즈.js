@@ -14,7 +14,7 @@ for (let i = 0; i < input.length; i++) {
         else {
             combo = 0;
         }
-        
+
     }
     console.log(score);
     score = 0;

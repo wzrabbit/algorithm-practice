@@ -7,22 +7,22 @@ let [l, r] = [0, 0];
 let min = 9999999999;
 
 while (r < input.length) {
-  if (input[r] - input[l] > gap) {
-    if (min > input[r] - input[l]) {
-      min = input[r] - input[l];
+    if (input[r] - input[l] > gap) {
+        if (min > input[r] - input[l]) {
+            min = input[r] - input[l];
+        }
+        if (l === r) {
+            r++;
+        }
+        l++;
     }
-    if (l === r) {
-      r++;
+    else if (input[r] - input[l] === gap) {
+        min = gap;
+        break;
     }
-    l++;
-  }
-  else if (input[r] - input[l] === gap) {
-    min = gap;
-    break;
-  }
-  else {
-    r++;
-  }
+    else {
+        r++;
+    }
 }
 
 console.log(min);

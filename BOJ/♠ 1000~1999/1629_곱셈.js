@@ -5,13 +5,13 @@ const [a, b, c] = require('fs').readFileSync('/dev/stdin').toString().trim().spl
 // n이 짝수 -> n^(m/2) * n^(m/2)
 
 function enhancedPow(n, m) {
-  if (m === 0n) return 1n;
-  
-  let p = m % 2n ? (m - 1n) / 2n : m / 2n;
-  let d = enhancedPow(n, p);
-  let t = d * d % c;
-  if (m % 2n === 0n) return t;
-  else return (n * t) % c;
+    if (m === 0n) return 1n;
+
+    let p = m % 2n ? (m - 1n) / 2n : m / 2n;
+    let d = enhancedPow(n, p);
+    let t = d * d % c;
+    if (m % 2n === 0n) return t;
+    else return (n * t) % c;
 }
 
 console.log(enhancedPow(a, b).toString());

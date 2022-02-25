@@ -9,6 +9,7 @@ for _ in range(9):
     sudoku.append(list(map(str, input().strip())))
 check = copy.deepcopy(sudoku)
 
+
 def isFilled(no):
     if no == 81:
         return True
@@ -16,8 +17,10 @@ def isFilled(no):
         return False
     return True
 
+
 def getRowCol(no):
     return (no // 9, no % 9)
+
 
 def solveSudoku(no, num):
     global kill
@@ -48,7 +51,7 @@ def solveSudoku(no, num):
                         return
         sudoku[r][c] = num
     if isFilled(no + 1):
-        solveSudoku(no + 1,'-1')
+        solveSudoku(no + 1, '-1')
     else:
         for i in range(1, 10):
             if kill == True:
@@ -56,6 +59,7 @@ def solveSudoku(no, num):
             solveSudoku(no + 1, str(i))
     if num != '-1':
         sudoku[r][c] = '0'
+
 
 if check[0][0] == '0':
     for i in range(9):

@@ -9,6 +9,7 @@ for i in range(goal):
         elements[data[i]] = 1
 elements = list(elements.values())
 
+
 def backtracking(current, length):
     global count
     elements[current] -= 1
@@ -20,6 +21,7 @@ def backtracking(current, length):
         if elements[i] > 0 and i != current:
             backtracking(i, length + 1)
     elements[current] += 1
+
 
 for k in range(len(elements)):
     backtracking(k, 1)

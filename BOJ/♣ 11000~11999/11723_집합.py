@@ -8,7 +8,7 @@ for _ in range(cases):
     if len(input_) == 1:
         input_.append(-1)
     num = int(input_[1])
-    
+
     if command == 'add':
         set_ |= 1 << num
     elif command == 'remove':

@@ -9,7 +9,7 @@ arrayA.sort((a, b) => a - b);
 arrayB.sort((a, b) => b - a);
 
 for (let i = 0; i < length; i++) {
-  result += arrayA[i] * arrayB[i];
+    result += arrayA[i] * arrayB[i];
 }
 
 console.log(result);

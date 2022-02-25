@@ -5,7 +5,7 @@ let result = "";
 input = input.map(Number).map(String);
 
 for (let i = 0; i < input.length; i++) {
-    switch(input[i].length) {
+    switch (input[i].length) {
         case 1:
             result += "yes\n";
             break;

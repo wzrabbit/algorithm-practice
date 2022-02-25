@@ -2,8 +2,10 @@
 #include <cmath>
 using namespace std;
 
-void do_hanoi(int hanoi, int start, int mid, int end) {
-    if (hanoi == 1) {
+void do_hanoi(int hanoi, int start, int mid, int end)
+{
+    if (hanoi == 1)
+    {
         cout << start << ' ' << end << '\n';
         return;
     }
@@ -13,7 +15,8 @@ void do_hanoi(int hanoi, int start, int mid, int end) {
     do_hanoi(hanoi - 1, mid, start, end);
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);

@@ -3,7 +3,7 @@ const [k, n] = input[0].split(' ').map((x) => parseInt(x));
 input.shift();
 
 input.sort((a, b) => {
-  return parseInt(a + b) > parseInt(b + a) ? -1 : 1;
+    return parseInt(a + b) > parseInt(b + a) ? -1 : 1;
 });
 
 let max = input.slice();

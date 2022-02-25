@@ -2,7 +2,7 @@ const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 input.shift();
 let score = input.toString().split(" ").map(Number);
-let maxScore = Math.max(...score); 
+let maxScore = Math.max(...score);
 
 for (let i = 0; i < score.length; i++) {
     score[i] = score[i] / maxScore * 100;

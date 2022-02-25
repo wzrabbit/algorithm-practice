@@ -6,11 +6,12 @@ count = 0
 queens = deque([])
 cols = [False] * n
 
+
 def nQueen(r, c):
     global count
     queens.append([r, c])
     cols[c] = True
-        
+
     for i in range(len(queens)):
         r_, c_ = queens[i]
         if [r_, c_] != [r, c] and (r - c == r_ - c_ or r + c == r_ + c_):
@@ -26,6 +27,7 @@ def nQueen(r, c):
     queens.pop()
     cols[c] = False
     return
+
 
 for i in range(n):
     nQueen(0, i)

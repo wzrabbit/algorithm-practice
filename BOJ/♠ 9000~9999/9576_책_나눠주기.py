@@ -9,7 +9,7 @@ for i in range(case):
     order = []
     for j in range(pupil):
         order.append(list(map(int, input().split())))
-    order.sort(key = lambda x: x[1] * 10000 + x[0])
+    order.sort(key=lambda x: x[1] * 10000 + x[0])
 
     for i in range(pupil):
         for j in range(1, len(book)):

@@ -5,20 +5,20 @@ let start = end = count = 0;
 let sum = nums[0];
 
 while (true) {
-  if (sum > target) {
-    sum -= nums[start];
-    start++;
-  }
-  else if (sum === target) {
-    count++;
-    sum -= nums[start];
-    start++;
-  }
-  else {
-    end++;
-    if (end === nums.length) break;
-    sum += nums[end];
-  }
+    if (sum > target) {
+        sum -= nums[start];
+        start++;
+    }
+    else if (sum === target) {
+        count++;
+        sum -= nums[start];
+        start++;
+    }
+    else {
+        end++;
+        if (end === nums.length) break;
+        sum += nums[end];
+    }
 }
 
 console.log(count);

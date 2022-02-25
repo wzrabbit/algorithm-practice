@@ -13,7 +13,7 @@ for i in range(edge):
 for i in range(vertex):
     graph[i][i] = 0
 
-#m : 중간점, s : 시작점, e : 도착점
+# m : 중간점, s : 시작점, e : 도착점
 # 시작 -> 도착 보다 시작 -> 중간 -> 도착 이 더 가까울 경우 값을 갱신
 for m in range(vertex):
     for s in range(vertex):
@@ -25,5 +25,5 @@ for i in range(vertex):
     for j in range(vertex):
         if graph[i][j] == inf:
             graph[i][j] = 0
-        print(graph[i][j], end = ' ')
+        print(graph[i][j], end=' ')
     print()

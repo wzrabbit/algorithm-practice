@@ -3,7 +3,7 @@ input = sys.stdin.readline
 books, limit = list(map(int, input().split(' ')))
 book = list(map(int, input().split(' ')))
 left = []
-right= []
+right = []
 total = 0
 
 for b in book:
@@ -13,7 +13,7 @@ for b in book:
         right.append(b)
 
 left.sort()
-right.sort(reverse = True)
+right.sort(reverse=True)
 
 leftIndex = 0
 rightIndex = 0

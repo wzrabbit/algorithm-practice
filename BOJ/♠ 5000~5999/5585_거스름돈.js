@@ -3,10 +3,10 @@ const coins = [500, 100, 50, 10, 5, 1];
 let count = 0;
 
 coins.forEach((x) => {
-  while (money >= x) {
-    money -= x;
-    count++;
-  }
+    while (money >= x) {
+        money -= x;
+        count++;
+    }
 });
 
 console.log(count);

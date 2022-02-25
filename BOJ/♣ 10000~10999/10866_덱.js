@@ -8,7 +8,7 @@ let result = "";
 // Deque demonstration
 for (let i = 1; i <= commandAmount; i++) {
     currentCommand = input[i].split(" ");
-    
+
     // push_front?
     if (currentCommand[0] === "push_front") {
         deque[deque.length] = currentCommand[1];
@@ -52,7 +52,7 @@ for (let i = 1; i <= commandAmount; i++) {
     }
     // enter if the command is not push
     if (currentCommand[0] !== "push_front" && currentCommand[0] !== "push_back") result += "\n";
-    
+
 }
 
 result = result.slice(result, -1);

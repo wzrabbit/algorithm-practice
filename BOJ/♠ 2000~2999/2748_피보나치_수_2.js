@@ -15,19 +15,19 @@ function plus(numA, numB) {
     numA = ("0" + numA).split("").map(Number);
     numB = ("0" + numB).split("").map(Number);
     let sum = new Array(numB.length);
-    
+
     // 자릿수를 맞추기 위해 numB와 길이가 같아질 때까지 numA 앞쪽에 0을 추가
     while (numA.length !== numB.length) {
         numA.unshift(0);
     }
-   
-    
+
+
     for (let i = numB.length - 1; i > 0; i--) {
         let aplusb = numA[i] + numB[i];
         sum[i] = aplusb;
         if (aplusb >= 10) carry(i); // i번째 자리에서 받아올림 발생
     }
-    
+
     function carry(level) {
         sum[level] -= 10;
         if (level !== 1) {

@@ -6,14 +6,14 @@ let result = '';
 let pokemonFinder = new Map();
 let numFinder = new Map();
 for (let i = 1; i <= pokemon; i++) {
-  pokemonFinder.set(i, input[i]);
-  numFinder.set(input[i], i);
+    pokemonFinder.set(i, input[i]);
+    numFinder.set(input[i], i);
 }
 
 for (let i = pokemon + 1; i <= pokemon + question; i++) {
 
-  if (isNaN(input[i])) result += numFinder.get(input[i]) + '\n';
-  else result += pokemonFinder.get(parseInt(input[i])) + '\n';
+    if (isNaN(input[i])) result += numFinder.get(input[i]) + '\n';
+    else result += pokemonFinder.get(parseInt(input[i])) + '\n';
 }
 
 result = result.slice(0, -1);

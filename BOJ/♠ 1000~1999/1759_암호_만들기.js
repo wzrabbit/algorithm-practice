@@ -6,30 +6,30 @@ let visited = [];
 let result = '';
 
 alphabets.forEach((alphabet) => {
-  dfs(alphabet);
+    dfs(alphabet);
 });
 
 function dfs(current) {
     visited.push(current);
 
     if (visited.length === chooseLength) {
-      let con = 0;
-      let vow = 0;
-      visited.forEach((letter) => {
-        if (['a', 'e', 'i', 'o', 'u'].includes(letter)) vow++;
-        else con++;
-      });
-      if (con >= 2 && vow >= 1) {
-        result += visited.join('') + '\n';
-      }
-      visited.pop();
-      return;
+        let con = 0;
+        let vow = 0;
+        visited.forEach((letter) => {
+            if (['a', 'e', 'i', 'o', 'u'].includes(letter)) vow++;
+            else con++;
+        });
+        if (con >= 2 && vow >= 1) {
+            result += visited.join('') + '\n';
+        }
+        visited.pop();
+        return;
     }
 
     alphabets.forEach((alphabet) => {
-      if (!visited.includes(alphabet) && current < alphabet) {
-        dfs(alphabet);
-      }
+        if (!visited.includes(alphabet) && current < alphabet) {
+            dfs(alphabet);
+        }
     });
 
     visited.pop();

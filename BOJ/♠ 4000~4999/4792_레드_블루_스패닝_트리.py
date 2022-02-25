@@ -6,11 +6,13 @@ rank = []
 blue = []
 red = []
 
+
 def getParent(a):
     if union[a] == 0:
         return a
     union[a] = getParent(union[a])
     return union[a]
+
 
 def merge(a, b):
     a = getParent(a)
@@ -26,10 +28,12 @@ def merge(a, b):
     else:
         return False
 
+
 def clearUnion(a):
     global union, rank
     union = [0 for i in range(a + 1)]
     rank = [1 for i in range(a + 1)]
+
 
 def clearAll(a):
     global union, rank, blue, red
@@ -38,10 +42,11 @@ def clearAll(a):
     blue = []
     red = []
 
+
 def check(mode, vertex):
     global blue, red
     count = 0
-    
+
     if mode == 'max':
         for i in blue:
             a, b = i
@@ -58,7 +63,8 @@ def check(mode, vertex):
             if count == vertex - 1:
                 return 0
         return vertex - 1 - count
-    
+
+
 while True:
     vertex, edge, goal = list(map(int, input().split()))
     if vertex == edge == goal == 0:

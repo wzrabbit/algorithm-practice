@@ -5,7 +5,7 @@ let numbers = [];
 let result = "";
 
 for (let i = 0; i < input.length; i++) {
-    numbers.push(...(input[i].match(/\d+/g)||[]));
+    numbers.push(...(input[i].match(/\d+/g) || []));
 }
 
 for (let i = 0; i < numbers.length; i++) {

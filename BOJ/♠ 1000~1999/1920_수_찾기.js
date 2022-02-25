@@ -13,18 +13,18 @@ for (let i = 0; i < searchList.length; i++) {
     let success = false;
 
     while (left <= right && success === false) {
-      let mid = Math.floor((left + right) / 2);
+        let mid = Math.floor((left + right) / 2);
 
-      if (searchList[i] === targetList[mid]) {
-        result += "1\n";
-        success = true;
-      }
-      else if (searchList[i] > targetList[mid]) {
-        left = mid + 1; 
-      }
-      else {
-        right = mid - 1;
-      }
+        if (searchList[i] === targetList[mid]) {
+            result += "1\n";
+            success = true;
+        }
+        else if (searchList[i] > targetList[mid]) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
     }
     if (success === false) result += "0\n";
 }

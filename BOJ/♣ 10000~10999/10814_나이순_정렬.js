@@ -7,7 +7,7 @@ let result = "";
 for (let i = 1; i <= 200; i++) {
     for (let j = 0; j < input.length; j++) {
         data = input[j].split(" ");
-        if(data[0] == i) result += input[j] + "\n";
+        if (data[0] == i) result += input[j] + "\n";
     }
 }
 

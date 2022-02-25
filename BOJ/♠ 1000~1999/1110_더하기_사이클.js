@@ -14,6 +14,6 @@ do {
     num[1] = (num[0] + num[1]) % 10;
     num[0] = temp;
     count++;
-} while(num[0] !== input[0] || num[1] !== input[1])
+} while (num[0] !== input[0] || num[1] !== input[1])
 
 console.log(count);

@@ -11,6 +11,7 @@ for _ in range(nodes - 1):
     tree[a].append(b)
     distTree[a].append(d)
 
+
 def bfs(start, startDist):
     maxDist = 0
     queue = deque([[start, startDist]])
@@ -25,6 +26,7 @@ def bfs(start, startDist):
         if isLeaf and dist > maxDist:
             maxDist = dist
     return maxDist
+
 
 for i in range(1, nodes + 1):
     current = 0

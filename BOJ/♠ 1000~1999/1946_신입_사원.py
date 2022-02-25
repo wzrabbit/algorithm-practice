@@ -7,8 +7,8 @@ for _ in range(n):
     employee = int(input())
     for _ in range(employee):
         arr.append(list(map(int, input().split())))
-    arr.sort(key = lambda x: x[0])
-    
+    arr.sort(key=lambda x: x[0])
+
     count = 1
     prev = arr[0][1]
     for i in range(1, employee):

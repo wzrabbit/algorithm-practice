@@ -15,6 +15,7 @@ for _ in range(nodes):
         tree[a].append(b)
         distTree[a].append(d)
 
+
 def bfs(start):
     queue = deque([[start, 0]])
     visited[start] = True
@@ -34,6 +35,7 @@ def bfs(start):
             mx = dist
             mxNode = node
     return [mx, mxNode]
+
 
 far = bfs(1)[1]
 visited = [False] * (nodes + 1)

@@ -6,8 +6,8 @@ const secondPrice = input[1];
 const notebookPrice = input[2];
 
 if (secondPrice < notebookPrice) {
-  console.log(Math.floor(firstPrice / (notebookPrice - secondPrice)) + 1);
+    console.log(Math.floor(firstPrice / (notebookPrice - secondPrice)) + 1);
 }
 else {
-  console.log(-1);
+    console.log(-1);
 }

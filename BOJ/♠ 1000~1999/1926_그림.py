@@ -9,6 +9,7 @@ for i in range(row):
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
 
+
 def getPicArea(startR, startC):
     area = 0
     graph[startR][startC] = 0
@@ -22,6 +23,7 @@ def getPicArea(startR, startC):
                 graph[r][c] = 0
                 queue.append([r, c])
     return area
+
 
 max_ = 0
 pictures = 0

@@ -12,7 +12,7 @@ while start <= end:
     mid = (start + end) // 2
     left = dollar
     success = True
-    
+
     for i in range(len(data)):
         cost, already, small, smallPrice, big, bigPrice = data[i]
         need = mid * cost - already

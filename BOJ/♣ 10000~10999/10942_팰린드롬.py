@@ -17,7 +17,7 @@ for c in range(caseA):
         elif abs(r - c) == 1:
             dp[r][c] = 'O'
         else:
-            dp[r][c] = 'X'  
+            dp[r][c] = 'X'
 
 caseB = int(input())
 for _ in range(caseB):

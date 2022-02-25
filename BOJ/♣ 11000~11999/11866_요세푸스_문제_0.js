@@ -7,12 +7,12 @@ let killList = [];
 let startIndex = 1;
 
 for (let i = 0; i < number; i++) {
-  for (let i = 0; i < kill - 1; i++) {
-    table[table.length] = table[startIndex];
+    for (let i = 0; i < kill - 1; i++) {
+        table[table.length] = table[startIndex];
+        startIndex++;
+    }
+    killList.push(table[startIndex]);
     startIndex++;
-  }
-  killList.push(table[startIndex]);
-  startIndex++;
 }
 
 console.log("<" + killList.join(", ") + ">");

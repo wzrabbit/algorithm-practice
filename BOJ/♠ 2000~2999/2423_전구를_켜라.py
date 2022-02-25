@@ -2,12 +2,14 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
+
 def toggle(arg):
     if arg == '\\':
         return '/'
     else:
         return '\\'
-    
+
+
 def bfs():
     queue = deque()
     dr = [-1, 1, 0, 0, -1, 1, 1, -1]
@@ -54,6 +56,7 @@ def bfs():
                         else:
                             visited[r][c] = True
                             queue.append([r, c, p + 1, h])
+
 
 row, col = list(map(int, input().split(' ')))
 visited = [[False for j in range(col)] for i in range(row)]

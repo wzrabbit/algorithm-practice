@@ -13,9 +13,10 @@ for i in range(edge):
     graph[start].append(end)
     graph[end].append(start)
 
+
 def bfs(startVertex):
     q = deque([startVertex])
-    
+
     while len(q):
         v = q.popleft()
 
@@ -23,6 +24,7 @@ def bfs(startVertex):
             if visited[n] == False:
                 visited[n] = True
                 q.append(n)
+
 
 for i in range(1, vertex + 1):
     if visited[i] == False:

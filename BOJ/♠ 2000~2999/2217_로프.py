@@ -6,7 +6,7 @@ mul = 1
 
 for _ in range(cases):
     ropes.append(int(sys.stdin.readline()))
-ropes.sort(reverse = True)
+ropes.sort(reverse=True)
 
 for i in range(cases):
     current = ropes[i] * mul

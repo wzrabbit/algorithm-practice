@@ -12,13 +12,14 @@ for r in range(row):
         if graph[r][c] == 'C':
             startR, startC = r, c
 
+
 def checkLandExists(r, c, f):
     if f == False:
         while r < row and graph[r][c] != '#' and graph[r][c] != 'D':
             r += 1
         if r == row:
             return -1
-        elif graph[r][c] == 'D': # 중력을 바꾸는 도중 D를 만난 경우
+        elif graph[r][c] == 'D':  # 중력을 바꾸는 도중 D를 만난 경우
             return r
         elif graph[r - 1][c] == '*':
             return -1
@@ -36,6 +37,7 @@ def checkLandExists(r, c, f):
         else:
             return r + 1
 
+
 def fallBeforeStart():
     global startR
     global startC
@@ -46,6 +48,7 @@ def fallBeforeStart():
         return 0
     else:
         return 1
+
 
 def bfs():
     queue = deque([[startR, startC, 0, False]])
@@ -58,7 +61,7 @@ def bfs():
             r = r_
             c = c_ + i
             if c < col and graph[r][c] != '#':
-                r =  checkLandExists(r, c, f)
+                r = checkLandExists(r, c, f)
                 if r != -1:
                     if graph[r][c] != 'D':
                         graph[r][c] = '*'
@@ -71,6 +74,7 @@ def bfs():
                 graph[r][c] = '*'
             queue.append([r, c, d + 1, not f])
     return -1
+
 
 fall = fallBeforeStart()
 if fall == -1:

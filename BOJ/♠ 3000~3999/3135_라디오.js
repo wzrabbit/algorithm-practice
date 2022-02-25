@@ -7,9 +7,9 @@ input = input.map(Number);
 let min = 9999;
 
 for (let i = 0; i < input.length; i++) {
-  let button = Math.abs(end - input[i]);
-  if (i !== 0) button++;
-  if (button < min) min = button;
+    let button = Math.abs(end - input[i]);
+    if (i !== 0) button++;
+    if (button < min) min = button;
 }
 
 console.log(min);

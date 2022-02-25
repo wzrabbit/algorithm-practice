@@ -7,16 +7,16 @@ let result = "";
 board[1] = 0;
 
 for (let i = 2; i <= searchEnd; i++) {
-  if (board[i] === 0) continue;
-  else {
-    for (let j = i * 2; j <= end; j += i) {
-      board[j] = 0;
+    if (board[i] === 0) continue;
+    else {
+        for (let j = i * 2; j <= end; j += i) {
+            board[j] = 0;
+        }
     }
-  }
 }
 
 for (let i = start; i <= end; i++) {
-  if (board[i] !== 0) result += i + "\n";
+    if (board[i] !== 0) result += i + "\n";
 }
 
 result = result.slice(0, -1);

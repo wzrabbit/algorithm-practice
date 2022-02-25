@@ -11,7 +11,7 @@ dogFloyd = [[inf for j in range(city)] for i in range(city)]
 
 for i in range(len(dog)):
     dog[i] = [i, dog[i]]
-dog.sort(key = lambda x: x[1])
+dog.sort(key=lambda x: x[1])
 for i in range(len(dog)):
     index[dog[i][0]] = i
 

@@ -3,10 +3,10 @@ let result = '';
 let find = false;
 
 for (let i = 0; i < 5; i++) {
-  if ((/FBI/).test(input[i])) {
-    result += (i + 1) + ' ';
-    find = true;
-  }
+    if ((/FBI/).test(input[i])) {
+        result += (i + 1) + ' ';
+        find = true;
+    }
 }
 
 if (find === true) console.log(result);

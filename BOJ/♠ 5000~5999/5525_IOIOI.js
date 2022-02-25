@@ -5,7 +5,7 @@ let count = 0;
 
 let findList = word.match(/(IO)+I/g);
 findList.forEach((x) => {
-  count += ((x.length - len) / 2 + 1) > 0 ? ((x.length - len) / 2 + 1) : 0;
+    count += ((x.length - len) / 2 + 1) > 0 ? ((x.length - len) / 2 + 1) : 0;
 });
 
 console.log(count);

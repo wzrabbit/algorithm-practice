@@ -10,8 +10,8 @@ let mul;
 let board = [numA, numB];
 let divisorFound = false;
 while (divisorFound === false) {
-  board[board.length] = board[board.length - 2] % board[board.length - 1];
-  if (board[board.length - 1] === 0) divisorFound = true;
+    board[board.length] = board[board.length - 2] % board[board.length - 1];
+    if (board[board.length - 1] === 0) divisorFound = true;
 }
 div = board[board.length - 2]; // 리스트의 마지막에서 두 번째 수 = 최대공약수
 

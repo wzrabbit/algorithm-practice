@@ -7,6 +7,7 @@ for i in range(num):
     point.append(list(map(int, input().split())))
 point.append([10000, 10000])
 
+
 def canArrive(limit):
     visited = [False] * (num + 2)
     visited[0] = True
@@ -24,6 +25,7 @@ def canArrive(limit):
                         visited[i] = True
                         queue.append([i, d + 1])
     return False
+
 
 start, end = 1, 1415
 while start <= end:

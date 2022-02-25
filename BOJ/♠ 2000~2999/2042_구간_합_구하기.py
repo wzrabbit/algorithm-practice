@@ -1,4 +1,7 @@
 # 세그먼트 트리 생성
+import sys
+
+
 def makeSegtree(start, end, index):
     # 리프 노드라면, 더 탐색할 수 없으므로 자기 자신을 값으로 반환
     if start == end:
@@ -7,10 +10,13 @@ def makeSegtree(start, end, index):
 
     # 리프 노드가 아니라면, 재귀적으로 하위 노드에 접근해 얻은 두 노드의 합을 더한다
     mid = (start + end) // 2
-    segTree[index] = makeSegtree(start, mid, index * 2 + 1) + makeSegtree(mid + 1, end, index * 2 + 2)
+    segTree[index] = makeSegtree(
+        start, mid, index * 2 + 1) + makeSegtree(mid + 1, end, index * 2 + 2)
     return segTree[index]
 
 # 세그먼트 트리 구간 합 구하기
+
+
 def getSum(start, end, index, left, right):
     # 구간 내에 합을 구하고자 하는 원소가 하나도 없으면, 탐색 중단
     if left > end or right < start:
@@ -25,6 +31,8 @@ def getSum(start, end, index, left, right):
     return getSum(start, mid, index * 2 + 1, left, right) + getSum(mid + 1, end, index * 2 + 2, left, right)
 
 # 세그먼트 트리 값 갱신
+
+
 def updateValue(start, end, index, target, value):
     # 갱신하고자 하는 값이 범위 내에 없다면, 탐색 중단
     if target < start or target > end:
@@ -42,7 +50,7 @@ def updateValue(start, end, index, target, value):
     updateValue(start, mid, index * 2 + 1, target, value)
     updateValue(mid + 1, end, index * 2 + 2, target, value)
 
-import sys
+
 input = sys.stdin.readline
 print = sys.stdout.write
 
@@ -52,7 +60,7 @@ segTree = [0] * (n * 4)
 
 for _ in range(n):
     raw.append(int(input()))
-    
+
 makeSegtree(0, n - 1, 0)
 
 for _ in range(m + k):

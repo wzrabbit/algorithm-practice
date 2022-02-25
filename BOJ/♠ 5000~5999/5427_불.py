@@ -7,6 +7,7 @@ graph = []
 dr = [-1, 1, 0, 0]
 dc = [0, 0, -1, 1]
 
+
 def fire(row, col):
     queue = deque()
     for r in range(row):
@@ -21,6 +22,7 @@ def fire(row, col):
             if r >= 0 and r < row and c >= 0 and c < col and graph[r][c] == '.':
                 graph[r][c] = d + 1
                 queue.append([r, c, d + 1])
+
 
 def escape(row, col):
     queue = deque()
@@ -44,6 +46,7 @@ def escape(row, col):
                 graph[r][c] = 'V'
                 queue.append([r, c, d + 1])
     return 'IMPOSSIBLE'
+
 
 for i in range(case):
     col, row = list(map(int, input().strip().split(' ')))

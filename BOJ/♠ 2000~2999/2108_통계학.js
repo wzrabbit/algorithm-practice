@@ -5,7 +5,7 @@ result = "";
 // 1. 산술 평균
 let sum = 0;
 for (let i = 0; i < input.length; i++) {
-  sum += input[i];
+    sum += input[i];
 }
 result += Math.round(sum / input.length) + "\n";
 
@@ -16,8 +16,8 @@ result += input[Math.floor(input.length / 2)] + "\n";
 // 3. 최빈값
 let inputMap = new Map();
 for (let i = 0; i < input.length; i++) {
-  if (inputMap.has(input[i])) inputMap.set(input[i], inputMap.get(input[i]) + 1);
-  else inputMap.set(input[i], 1);
+    if (inputMap.has(input[i])) inputMap.set(input[i], inputMap.get(input[i]) + 1);
+    else inputMap.set(input[i], 1);
 }
 let maxValue = [...inputMap.values()].sort((a, b) => a - b);
 maxValue = maxValue[maxValue.length - 1];
@@ -25,7 +25,7 @@ let valueList = [];
 
 let keys = [...inputMap.keys()];
 for (let i = 0; i < keys.length; i++) {
-  if (inputMap.get(keys[i]) === maxValue) valueList.push(keys[i]);
+    if (inputMap.get(keys[i]) === maxValue) valueList.push(keys[i]);
 }
 
 if (valueList.length === 1) result += valueList[0] + "\n";

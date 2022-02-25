@@ -5,18 +5,18 @@ input = input[1].split('').map(Number);
 let stack = [input[0]];
 
 for (let i = 1; i < len; i++) {
-  if (stack[stack.length - 1] < input[i] && chance >= 1) {
-    while (stack[stack.length - 1] < input[i] && chance >= 1) {
-      stack.pop();
-      chance--;
+    if (stack[stack.length - 1] < input[i] && chance >= 1) {
+        while (stack[stack.length - 1] < input[i] && chance >= 1) {
+            stack.pop();
+            chance--;
+        }
     }
-  }
-  stack.push(input[i]);
+    stack.push(input[i]);
 }
 
 while (chance > 0) {
-  stack.pop();
-  chance--;
+    stack.pop();
+    chance--;
 }
 
 console.log(stack.join(''));

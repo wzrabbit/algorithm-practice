@@ -3,29 +3,29 @@ input.shift();
 result = "";
 
 for (let i = 0; i < input.length; i++) {
-  let url = input[i];
-  let protocol = host = port = path = "";
+    let url = input[i];
+    let protocol = host = port = path = "";
 
-  url = url.split("://");
-  protocol = url[0];
-  url.shift();
-  url = url.join("://");
+    url = url.split("://");
+    protocol = url[0];
+    url.shift();
+    url = url.join("://");
 
-  url = url.replace(/:\d+/, (search) => {
-    port = search.replace(":", "");
-    return "";
-  });
+    url = url.replace(/:\d+/, (search) => {
+        port = search.replace(":", "");
+        return "";
+    });
 
-  url = url.split("/");
-  host = url[0];
-  url.shift();
+    url = url.split("/");
+    host = url[0];
+    url.shift();
 
-  path = url.join("/");
+    path = url.join("/");
 
-  if (port === "") port = "<default>";
-  if (path === "") path = "<default>";
+    if (port === "") port = "<default>";
+    if (path === "") path = "<default>";
 
-  result += `URL #${i + 1}
+    result += `URL #${i + 1}
 Protocol = ${protocol}
 Host     = ${host}
 Port     = ${port}

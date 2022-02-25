@@ -11,23 +11,23 @@ const wSort = [w1, w2, w3].sort((a, b) => a - b);
 let resultChecker = false;
 
 if ((ax - bx) / (ay - by) === (bx - cx) / (by - cy)) {
-  resultChecker = true;
-  console.log('X');
+    resultChecker = true;
+    console.log('X');
 }
 
 if (wSort[0] === wSort[2] && resultChecker === false) {
-  resultChecker = true;
-  console.log('JungTriangle');
+    resultChecker = true;
+    console.log('JungTriangle');
 }
 
 if (resultChecker === false) {
-  let result = '';
-  if (wSort[0] + wSort[1] > wSort[2]) result += 'Yeahkak';
-  else if (wSort[0] + wSort[1] < wSort[2]) result += 'Dunkak';
-  else result += 'Jikkak';
+    let result = '';
+    if (wSort[0] + wSort[1] > wSort[2]) result += 'Yeahkak';
+    else if (wSort[0] + wSort[1] < wSort[2]) result += 'Dunkak';
+    else result += 'Jikkak';
 
-  if (wSort[0] === wSort[1] || wSort[1] === wSort[2]) result += '2Triangle';
-  else result += 'Triangle';
+    if (wSort[0] === wSort[1] || wSort[1] === wSort[2]) result += '2Triangle';
+    else result += 'Triangle';
 
-  console.log(result);
+    console.log(result);
 }

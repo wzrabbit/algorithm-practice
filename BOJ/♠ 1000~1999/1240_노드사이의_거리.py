@@ -13,6 +13,7 @@ for _ in range(nodes - 1):
     distTree[a].append(d)
     distTree[b].append(d)
 
+
 def bfs(start, end, visited):
     queue = deque([[start, 0]])
     while len(queue):
@@ -27,6 +28,7 @@ def bfs(start, end, visited):
                 visited[nxt] = True
                 queue.append([nxt, dist + nxtDist])
     print('fail')
+
 
 for _ in range(cases):
     s, e = list(map(int, sys.stdin.readline().split()))

@@ -16,10 +16,10 @@ dfs(1);
 console.log(result);
 
 function dfs(current) {
-  visited[current] = true;
-  result++;
+    visited[current] = true;
+    result++;
 
-  for (let i = 0; i < graph[current].length; i++) {
-    if (visited[graph[current][i]] === false) dfs(graph[current][i]);
-  }
+    for (let i = 0; i < graph[current].length; i++) {
+        if (visited[graph[current][i]] === false) dfs(graph[current][i]);
+    }
 }

@@ -7,19 +7,19 @@ let maxIncome = 0;
 let maxEgg = 0;
 
 for (let i = 1; i < input[0]; i++) {
-  let income = getBuyAmount(i) * i;
-  if (income > maxIncome) {
-    maxIncome = income;
-    maxEgg = i;
-  }
+    let income = getBuyAmount(i) * i;
+    if (income > maxIncome) {
+        maxIncome = income;
+        maxEgg = i;
+    }
 }
 
 console.log(maxEgg, maxIncome);
 
 function getBuyAmount(price) {
-  let amount = 0;
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] >= price) amount++;
-  }
-  return Math.min(egg, amount);
+    let amount = 0;
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] >= price) amount++;
+    }
+    return Math.min(egg, amount);
 }

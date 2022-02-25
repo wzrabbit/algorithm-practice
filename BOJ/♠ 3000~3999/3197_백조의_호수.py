@@ -27,7 +27,7 @@ for r in range(row):
                     break
         elif graph[r][c] == 'L':
             swan = [r, c]
-            
+
 while len(queue):
     r, c, t = queue.popleft()
     for i in range(4):

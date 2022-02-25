@@ -4,6 +4,7 @@ input = sys.stdin.readline
 graph = [[0 for j in range(501)] for i in range(501)]
 visited = [[False for j in range(501)] for i in range(501)]
 
+
 def writeArea(data, no):
     c1, r1, c2, r2 = list(map(int, data.split(' ')))
     if r1 > r2:
@@ -19,6 +20,7 @@ def writeArea(data, no):
         for c in range(c1, c2 + 1):
             if graph[r][c] < no:
                 graph[r][c] = no
+
 
 def bfs():
     queue = deque([[0, 0, 0]])
@@ -41,6 +43,7 @@ def bfs():
                 if graph[r][c] == 1:
                     queue.append([r, c, h + 1])
     print(-1)
+
 
 danger = int(input())
 for _ in range(danger):

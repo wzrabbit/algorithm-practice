@@ -3,8 +3,8 @@ let num = 665;
 let count = 0;
 
 while (count < input) {
-  num++;
-  if (num.toString().match(/666/)) count++;
+    num++;
+    if (num.toString().match(/666/)) count++;
 }
 
 console.log(num);

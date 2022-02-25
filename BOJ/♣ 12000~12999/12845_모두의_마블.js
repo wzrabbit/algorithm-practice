@@ -3,7 +3,7 @@ let cards = require("fs").readFileSync("/dev/stdin").toString().trim().split('\n
 const maxCard = cards.pop();
 let total = 0;
 for (let i = 0; i < cards.length; i++) {
-  total += cards[i];
+    total += cards[i];
 }
 total += maxCard * cards.length;
 

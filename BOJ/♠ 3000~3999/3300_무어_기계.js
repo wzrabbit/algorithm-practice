@@ -12,12 +12,12 @@ function calculate(structure, output) {
     structure = "^" + structure + "$";
     let regex = new RegExp(structure);
     if (!(output.match(regex))) return "!";
-    
+
     // 2. "_" 케이스 체크
     structure = structure.replace(".", "0");
     regex = new RegExp(structure);
     if (output.match(regex)) return "_";
-    
+
     // 3. 빈칸에 들어가야 하는 문자열 찾기 (노가다)
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let newStructure = structure;

@@ -3,6 +3,7 @@ input = sys.stdin.readline
 result = {}
 data = 0
 
+
 def backTracking(current, cnt, goal):
     if cnt == goal:
         if '3' in str(current):
@@ -17,6 +18,7 @@ def backTracking(current, cnt, goal):
     backTracking(current * data[cnt + 1], cnt + 1, goal)
     if data[cnt + 1] != 0:
         backTracking(current // data[cnt + 1], cnt + 1, goal)
+
 
 while True:
     data = input().rstrip().split()

@@ -8,7 +8,7 @@ let result = "";
 // Stack demonstration
 for (let i = 1; i <= commandAmount; i++) {
     currentCommand = input[i].split(" ");
-    
+
     // push?
     if (currentCommand[0] === "push") {
         stack[stack.length] = currentCommand[1];
