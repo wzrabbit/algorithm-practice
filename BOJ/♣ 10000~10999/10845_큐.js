@@ -45,5 +45,4 @@ for (let i = 1; i <= commandAmount; i++) {
     if (currentCommand[0] !== "push") result += "\n";
 }
 
-result = result.slice(result, -1);
 console.log(result);
