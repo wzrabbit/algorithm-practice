@@ -1,0 +1,1 @@
+console.log(require('fs').readFileSync('/dev/stdin').toString().trim().match(/.{1,10}/g).join('\n'));
