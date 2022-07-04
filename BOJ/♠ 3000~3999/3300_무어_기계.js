@@ -1,29 +1,31 @@
-const fs = require("fs");
-const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
-input.shift();
+function solve(exp, word) {
+    let regex = new RegExp('^' + exp.replace('_', '.') + '$');
+    if (!regex.test(word))
+        return '!';
 
-for (let i = 0; i < input.length; i += 2) {
-    console.log(calculate(input[i], input[i + 1]));
-}
-
-function calculate(structure, output) {
-    // 1. "!" 케이스 체크
-    structure = structure.replace("_", ".");
-    structure = "^" + structure + "$";
-    let regex = new RegExp(structure);
-    if (!(output.match(regex))) return "!";
-
-    // 2. "_" 케이스 체크
-    structure = structure.replace(".", "0");
-    regex = new RegExp(structure);
-    if (output.match(regex)) return "_";
-
-    // 3. 빈칸에 들어가야 하는 문자열 찾기 (노가다)
-    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let newStructure = structure;
+    let answer = null;
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (let i = 0; i < 26; i++) {
-        let currentStructure = newStructure.replace("0", alphabet[i]);
-        regex = new RegExp(currentStructure);
-        if (output.match(regex)) return alphabet[i];
+        regex = new RegExp('^' + exp.replace('_', alphabet[i]) + '$');
+        if (regex.test(word)) {
+            if (answer === null)
+                answer = alphabet[i];
+            else
+                return '_';
+        }
     }
+
+    return answer;
 }
+
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
+let printer = '';
+
+for (let i = 1; i < input.length; i += 2) {
+    const exp = input[i];
+    const word = input[i + 1];
+
+    printer += solve(exp, word) + '\n';
+}
+
+console.log(printer);

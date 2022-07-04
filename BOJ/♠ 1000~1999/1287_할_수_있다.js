@@ -32,15 +32,18 @@ if (error === false) {
     function calculator(expression) {
         // 곱셈, 나눗셈 처리
         while (expression.includes('*') || expression.includes('/')) {
-            expression = expression.replace(/\d+(\*|\/)\d+/, (x) => {
-                if (x.includes('*')) return (BigInt(x.split('*')[0]) * BigInt(x.split('*')[1]));
-                else return (BigInt(BigInt(x.split('/')[0]) / BigInt(x.split('/')[1]))).toString();
+            expression = expression.replace(/(\[-)?\d+]?(\*|\/)(\[-)?\d+]?/, (x) => {
+                if (x.includes('*')) {
+                    let calcResult = BigInt(x.split('*')[0].replace(/[[\]]/g, '')) * BigInt(x.split('*')[1].replace(/[[\]]/g, ''));
+                    return calcResult >= 0 ? calcResult.toString() : '[' + calcResult.toString() + ']';
+                }
+                else {
+                    let calcResult = BigInt(x.split('/')[0].replace(/[[\]]/g, '')) / BigInt(x.split('/')[1].replace(/[[\]]/g, ''));
+                    return calcResult >= 0 ? calcResult.toString() : '[' + calcResult.toString() + ']';
+                }
             });
         }
-        // 음수가 있을 경우 []로 감싸서 임시 처리
-        expression = expression.replace(/(?<=[+\-*\/])-\d+|^-\d+/g, (x) => {
-            return '[' + x + ']';
-        });
+
         // 덧셈, 뺄셈 처리. 역시 계산 중 음수가 발생하면 []로 감싸서 임시 처리
         while (expression.includes('+') || (expression.replace(/\[.*\]/g, '').includes('-'))) {
             expression = expression.replace(/(\[-)?\d+]?(\+|\-)(\[-)?\d+]?/, (x) => {
