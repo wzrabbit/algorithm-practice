@@ -1,0 +1,21 @@
+import sys
+input = sys.stdin.readline
+
+ax, ay, bx, by = map(float, input().split())
+hole = []
+success = False
+
+for line in sys.stdin:
+    hole.append(line.split())
+
+for cx, cy in hole:
+    ocx = float(cx)
+    ocy = float(cy)
+    if ((ax - ocx) ** 2 + (ay - ocy) ** 2) * 4 < (bx - ocx) ** 2 + (by - ocy) ** 2:
+        print(
+            'The gopher can escape through the hole at ({},{})'.format(cx, cy))
+        success = True
+        break
+
+if not success:
+    print('The gopher cannot escape.')
