@@ -1,7 +1,7 @@
 N = int(input())
 for _ in range(N):
-    limit, sr, sc, er, ec = map(int, input().split())
-    dist = abs(sr - er) + abs(sc - ec)
+    limit, start_r, start_c, end_r, end_c = map(int, input().split())
+    dist = abs(start_r - end_r) + abs(start_c - end_c)
 
     if dist <= limit:
         print('First 1')
