@@ -1,32 +1,31 @@
-const fs = require("fs");
-const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
-input.shift();
-let stack = [];
-let result = "";
-let error = false;
+const isVPS = (brackets) => {
+  const stack = [];
 
-for (let i = 0; i < input.length; i++) {
-    let text = input[i];
-    for (let j = 0; j < text.length; j++) {
-        addStack(text[j]);
-        if (error === true) break;
+  for (let i = 0; i < brackets.length; i++) {
+    if (brackets[i] === '(') {
+      stack.push(brackets[i]);
+      continue;
     }
-    if (stack.length === 0 && error === false) result += "YES\n";
-    else result += "NO\n";
-    stack = [];
-    error = false;
+
+    if (stack.length === 0) {
+      return false;
+    }
+
+    stack.pop();
+  }
+
+  return stack.length === 0;
 }
 
-result = result.substr(0, result.length - 1) // remove last enter
-console.log(result);
+const [_, ...input] = require('fs')
+  .readFileSync(0, 'utf-8')
+  .trim()
+  .split('\n');
 
-// stack
-function addStack(symbol) {
-    if (symbol === "(") {
-        stack[stack.length] = "(";
-    }
-    else if (stack[stack.length - 1] === "(") {
-        stack.pop();
-    }
-    else error = true; // stop algorithm if error found
-}
+let answer = '';
+
+input.forEach((testcase) => {
+  answer += `${isVPS(testcase) ? 'YES' : 'NO'}\n`;
+});
+
+console.log(answer);
