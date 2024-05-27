@@ -1,0 +1,3 @@
+A, P, C = list(map(int, input().split()))
+
+print(max(A + C, P))
